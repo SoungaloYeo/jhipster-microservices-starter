@@ -1,0 +1,92 @@
+application {
+  config {
+    baseName gateway
+    packageName com.demo.gateway
+    applicationType gateway
+    authenticationType jwt 
+    buildTool maven 
+    clientFramework angularX 
+    prodDatabaseType postgresql
+    serviceDiscoveryType eureka
+    testFrameworks [cypress] 
+  }
+  entities Author, Book, Tag, Product
+}
+
+application {
+  config {
+    baseName author
+    packageName com.demo.blog
+    applicationType microservice 
+    authenticationType jwt
+    buildTool maven
+    databaseType sql
+    devDatabaseType h2Memory
+    prodDatabaseType postgresql
+    enableHibernateCache false
+    serverPort 8081
+    serviceDiscoveryType eureka
+  }
+  entities Author, Book, Tag
+}
+
+application {
+  config {
+    baseName store
+    packageName com.demo.store
+    applicationType microservice
+    authenticationType jwt
+    buildTool maven
+    databaseType sql
+    devDatabaseType h2Memory
+    prodDatabaseType postgresql
+    enableHibernateCache false
+    serverPort 8082
+    serviceDiscoveryType eureka
+  }
+  entities Product
+}
+
+entity Author {
+  name String required minlength(3)
+  handle String required minlength(2)
+}
+
+entity Book {
+  title String required
+  content TextBlob required
+  date Instant required
+}
+
+entity Tag {
+  name String required minlength(2)
+}
+
+entity Product {
+  title String required
+  price BigDecimal required min(0)
+  image ImageBlob
+}
+
+relationship ManyToOne {
+  Book{author(name)} to Author
+}
+
+relationship ManyToMany {
+  Book{tag(name)} to Tag{book}
+}
+
+paginate Book, Tag with infinite-scroll
+paginate Product with pagination
+
+microservice Product with store
+microservice Author, Book, Tag with author
+
+dto * with mapstruct
+service * with serviceImpl
+
+deployment { 
+  deploymentType docker-compose
+  appsFolders [gateway, author, store]
+  dockerRepositoryName "yeosglo"
+}

@@ -1,0 +1,13 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["gateway", "author", "store"],
+    "clusteredDbApps": [],
+    "deploymentType": "docker-compose",
+    "directoryPath": "../",
+    "dockerRepositoryName": "yeosglo",
+    "gatewayType": "SpringCloudGateway",
+    "jwtSecretKey": "OWZkMzc3YWQ2NmExYzUyMjEwNDViZDNlZjk0MzM5MDlkNDIwYWQ2ZTZiYTkwOTIzODU3NjJmNzRiNjI5OWYyODk2MWU1MGZkYjZkNjNmNTY3MDU2YmQ2NmVlMmNlMGU3OGI5MQ==",
+    "monitoring": "no",
+    "serviceDiscoveryType": "eureka"
+  }
+}

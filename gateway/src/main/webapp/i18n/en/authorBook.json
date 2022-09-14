@@ -1,0 +1,32 @@
+{
+  "gatewayApp": {
+    "authorBook": {
+      "home": {
+        "title": "Books",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Book",
+        "createOrEditLabel": "Create or edit a Book",
+        "notFound": "No Books found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Book {{ id }}?"
+      },
+      "detail": {
+        "title": "Book"
+      },
+      "id": "ID",
+      "title": "Title",
+      "content": "Content",
+      "date": "Date",
+      "author": "Author",
+      "tag": "Tag"
+    }
+  },
+  "authorApp": {
+    "authorBook": {
+      "created": "A new Book is created with identifier {{ param }}",
+      "updated": "A Book is updated with identifier {{ param }}",
+      "deleted": "A Book is deleted with identifier {{ param }}"
+    }
+  }
+}

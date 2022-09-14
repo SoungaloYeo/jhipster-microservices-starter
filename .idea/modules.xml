@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/author/author.iml" filepath="$PROJECT_DIR$/author/author.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jhipster-registry/jhipster-registry.iml" filepath="$PROJECT_DIR$/jhipster-registry/jhipster-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ms-with-jhipster.iml" filepath="$PROJECT_DIR$/.idea/ms-with-jhipster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store/store.iml" filepath="$PROJECT_DIR$/store/store.iml" />
+    </modules>
+  </component>
+</project>
